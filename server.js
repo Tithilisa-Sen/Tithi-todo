@@ -19,7 +19,9 @@ mongoose.connect(
 //Routes
 
 const userRoute=require("./routes/user.route");
+const todoRoute=require("./routes/todo.route")
 app.use("/user",userRoute);
+app.use("/todo",todoRoute);
 
 
 app.get("/",(req,res)=>{
