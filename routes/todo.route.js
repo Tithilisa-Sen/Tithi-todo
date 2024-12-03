@@ -47,4 +47,13 @@ router.patch("/:id",async(req,res)=>{
     }
 });
 
+router.delete("/:id",async(req,res)=>{
+    try{
+      const deletedList=await List.findByIdAndDelete(req.params.id);
+      res.status(200).json(deletedList);
+    }catch(error){
+    res.status(400).send("Error: "+error);
+    }
+});
+
 module.exports=router;
